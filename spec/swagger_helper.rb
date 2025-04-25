@@ -22,6 +22,18 @@ RSpec.configure do |config|
         version: 'v1'
       },
       paths: {},
+      components: {
+        schemas: {
+          User: {
+            type: 'object',
+            properties: {
+              id: { type: 'integer' },
+              name: { type: 'string' }
+            },
+            required: %w[id name]
+          }
+        }
+      },
       servers: [
         {
           url: 'https://{defaultHost}',

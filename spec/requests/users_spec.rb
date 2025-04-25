@@ -15,12 +15,7 @@ describe 'Users API' do
             users: {
               type: :array,
               items: {
-                type: :object,
-                properties: {
-                  id: { type: :integer },
-                  name: { type: :string }
-                },
-                required: [ 'id', 'name' ]
+                '$ref' => '#/components/schemas/User'
               }
             }
           },
