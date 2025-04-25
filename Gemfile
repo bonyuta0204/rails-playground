@@ -14,6 +14,8 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 # gem "rack-cors"
 gem 'ridgepole'
 
+gem 'rswag'
+
 group :development, :test do
  gem 'rspec-rails', '~> 7.0.0'
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
