@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 namespace :ridgepole do
   desc 'Apply db/Schemafile to database using Ridgepole'
-  task :apply => :environment do
+  task apply: :environment do
     config = Rails.configuration.database_configuration[Rails.env]
-    adapter = config['adapter']
-    database = config['database']
-    username = config['username']
-    password = config['password']
-    host = config['host']
-    port = config['port']
+    config['adapter']
+    config['database']
+    config['username']
+    config['password']
+    config['host']
+    config['port']
 
     cmd = [
       'bundle', 'exec', 'ridgepole',
@@ -21,14 +23,14 @@ namespace :ridgepole do
   end
 
   desc 'Dump database schema to db/Schemafile using Ridgepole'
-  task :dump => :environment do
+  task dump: :environment do
     config = Rails.configuration.database_configuration[Rails.env]
-    adapter = config['adapter']
-    database = config['database']
-    username = config['username']
-    password = config['password']
-    host = config['host']
-    port = config['port']
+    config['adapter']
+    config['database']
+    config['username']
+    config['password']
+    config['host']
+    config['port']
 
     cmd = [
       'bundle', 'exec', 'ridgepole',
