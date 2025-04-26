@@ -3,6 +3,6 @@
 class UsersController < ApplicationController
   def index
     status, response = Users::IndexUsecase.call
-    render json: { status: status, users: response }
+    render json: response, status: status
   end
 end

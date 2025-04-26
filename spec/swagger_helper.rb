@@ -30,16 +30,17 @@ RSpec.configure do |config|
               id: { type: 'integer' },
               name: { type: 'string' }
             },
-            required: %w[id name]
+            required: %w[id name],
+            additionalProperties: false
           }
         }
       },
       servers: [
         {
-          url: 'https://{defaultHost}',
+          url: 'http://{defaultHost}',
           variables: {
             defaultHost: {
-              default: 'www.example.com'
+              default: 'localhost:3000'
             }
           }
         }

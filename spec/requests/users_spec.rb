@@ -11,7 +11,6 @@ describe 'Users API' do
       response '200', 'users found' do
         schema type: :object,
           properties: {
-            status: { type: :string },
             users: {
               type: :array,
               items: {
@@ -19,7 +18,7 @@ describe 'Users API' do
               }
             }
           },
-          required: [ 'status', 'users' ]
+          required: [ 'users' ]
 
         before do
           User.create!(id: 1, name: 'Alice')
@@ -28,7 +27,6 @@ describe 'Users API' do
 
         run_test! do |response|
           data = JSON.parse(response.body)
-          expect(data['status']).to eq('ok')
           expect(data['users'].size).to eq(2)
           expect(data['users'].map { |u| u['name'] }).to include('Alice', 'Bob')
         end
